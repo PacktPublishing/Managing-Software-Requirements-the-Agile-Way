@@ -3,7 +3,7 @@ require 'webdrivers'
 require 'minitest'
 
 Before do 
-  @site = Site.new(Watir::Browser.new)
+  @site = Website.new(Watir::Browser.new)
     
 end
 
