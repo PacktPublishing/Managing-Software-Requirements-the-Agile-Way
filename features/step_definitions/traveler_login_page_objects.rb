@@ -4,7 +4,6 @@ require 'minitest'
 
 Before do 
   @site = Website.new(Watir::Browser.new)
-    
 end
 
 After do
