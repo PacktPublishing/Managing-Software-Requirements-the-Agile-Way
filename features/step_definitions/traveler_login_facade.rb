@@ -1,43 +1,47 @@
 
-# require 'watir'
-# require 'webdrivers'
-# require 'minitest'
+require 'watir'
+require 'webdrivers'
+require 'minitest'
 
-# Before do 
-#   @browser = Watir::Browser.new
-# end
+Before do 
+  @traveller = Traveller.new
+  @options = {}
+end
 
-# After do
-#   @browser.close
-# end
-
-# Given('Traveller is at the log-in page') do
-#   @browser.goto 'https://www.phptravels.net/login'
-# end
-
-# When('Traveller enters the correct username') do
-#   @browser.text_field(type: 'email').set 'user@phptravels.com'
-# end
-
-# When('Traveller enters the correct password') do
-#   @browser.text_field(type: 'password').set 'demouser'
-# end
+# traveller.visit("https://www.phptravels.net/login")
+# traveller.login("user@phptravels.com'", "demouser")
+# assert traveller.logged_in?
+# traveller.visit('https://www.phptravels.net/account/')
+# booking = traveller.find_booking("#bookings > div.row > div.col-md-5.offset-0.o4 > div.d-flex.flex-column > a > b")
+# assert booking.text, 'Rendezvous Hotels'
 
 
-# When('Traveller submits credentials') do
-#   @browser.button(type: 'submit').click
-#   @browser.wait_until { @browser.window.url.include? 'https://www.phptravels.net/account' }
-# end
+Given('Traveller is at the log-in page') do
+  @traveller.visit("https://www.phptravels.net/login")
+end
 
-# Then('Traveller is taken to their bookings page') do
-#   assert_equal @browser.url, 'https://www.phptravels.net/account/'
-# end
+When('Traveller enters the correct username') do
+  @options[:usrname] = "user@phptravels.com"
+end
 
-# Then('Traveller sees their booking') do
-#   expected_hotel = 'Rendezvous Hotels'
-#   screen_hotel = @browser.element(css: "#bookings > div.row > div.col-md-5.offset-0.o4 > div.d-flex.flex-column > a > b").text
-#   assert_equal screen_hotel, expected_hotel
-# end
+When('Traveller enters the correct password') do
+  @options[:pwd] = "demouser"
+end
+
+
+When('Traveller submits credentials') do
+  @traveller.login(@options[:usrname], @options[:pwd], 'https://www.phptravels.net/account/')
+  assert @traveller.logged_in?
+end
+
+Then('Traveller is taken to their bookings page') do
+  @traveller.visit('https://www.phptravels.net/account/')
+end
+
+Then('Traveller sees their booking') do
+  booking = @traveller.find_booking("#bookings > div.row > div.col-md-5.offset-0.o4 > div.d-flex.flex-column > a > b")
+  assert booking.text, 'Rendezvous Hotels'
+end
 
 
 

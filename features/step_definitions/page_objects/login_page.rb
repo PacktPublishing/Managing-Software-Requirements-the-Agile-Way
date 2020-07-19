@@ -1,4 +1,5 @@
 require_relative 'container'
+
 class LoginPage < Container
     URL = "https://www.phptravels.net/login"
 
@@ -32,4 +33,4 @@ class LoginPage < Container
     def login_button
       @browser.button(type: 'submit')
     end
-  end # LoginPage
+  end
