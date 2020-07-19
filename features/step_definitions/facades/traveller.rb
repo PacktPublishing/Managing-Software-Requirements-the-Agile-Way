@@ -1,6 +1,4 @@
 class Traveller
-  attr_reader :logged_in
-
   def initialize
     @browser = Watir::Browser.new
   end
@@ -12,8 +10,8 @@ class Traveller
   def login(usr, pwd, confirmation_page)
     @browser.text_field(type: 'email').set usr
     @browser.text_field(type: 'password').set pwd
-    @browser.button(type: 'submit').click
-    @browser.wait_until { @browser.window.url.include? confirmation_page}
+    @browser.button(type: 'submit').click 
+    @browser.wait_until { @browser.window.url.include? confirmation_page }
   end
 
   def find_booking

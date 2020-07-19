@@ -13,14 +13,6 @@ Before do
   }
 end
 
-# traveller.visit("https://www.phptravels.net/login")
-# traveller.login("user@phptravels.com'", "demouser")
-# assert traveller.logged_in?
-# traveller.visit('https://www.phptravels.net/account/')
-# booking = traveller.find_booking
-# assert booking.text, 'Rendezvous Hotels'
-
-
 Given('Traveller is at the log-in page') do
   @traveller.visit @options[:login_page]
 end
