@@ -39,7 +39,7 @@ cucumber --exclude traveler_login_[fp]
 
 ## How to run the code samples
 
-1. Install the [Ruby version]((https://www.ruby-lang.org/en/documentation/installation/)) specified in the Gemfile. 
+1. [Install the Ruby version](https://www.ruby-lang.org/en/documentation/installation/) specified in the Gemfile. 
 2. Clone this repository to your machine and `cd` into its directory.
 3. On the command line, enter `bundle install` to install dependencies.
 4. On the command line, enter `cucumber --exclude traveler_login_[fp]` to verify the features using a specific Step Definition pattern, as described in Introduction.
