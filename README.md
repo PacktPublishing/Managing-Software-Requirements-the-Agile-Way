@@ -1,3 +1,7 @@
+## [Get this title for $10 on Packt's Spring Sale](https://www.packt.com/B16234?utm_source=github&utm_medium=packt-github-repo&utm_campaign=spring_10_dollar_2022)
+-----
+For a limited period, all eBooks and Videos are only $10. All the practical content you need \- by developers, for developers
+
 # Managing Software Requirements the Agile Way
 
 <a href="https://www.packtpub.com/business-other/managing-software-requirements-the-agile-way?utm_source=github&utm_medium=repository&utm_campaign="><img src="https://images-na.ssl-images-amazon.com/images/I/51I0zwmGBtL._SX403_BO1,204,203,200_.jpg" alt="Managing Software Requirements the Agile Way" height="256px" align="right"></a>
